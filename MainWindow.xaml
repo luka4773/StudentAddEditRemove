@@ -3,16 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <DataGrid HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="175" Width="497"/>
-        <Button Content="add" HorizontalAlignment="Left" Margin="10,192,0,0" VerticalAlignment="Top" Width="75"/>
+        <DataGrid ItemsSource ="{Binding Name}" x:Name="grdStudent" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="175" Width="497"/>
+        <Button Content="add" HorizontalAlignment="Left" Margin="10,192,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
         <Button Content="edit" HorizontalAlignment="Left" Margin="10,243,0,0" VerticalAlignment="Top" Width="75"/>
         <Button Content="remove" HorizontalAlignment="Left" Margin="10,217,0,0" VerticalAlignment="Top" Width="75"/>
         <Label Content="Name" HorizontalAlignment="Left" Margin="270,201,0,0" VerticalAlignment="Top"/>
         <Label Content="Address" HorizontalAlignment="Left" Margin="270,229,0,0" VerticalAlignment="Top"/>
         <Label Content="Age" HorizontalAlignment="Left" Margin="270,265,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="130,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="130,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="130,265,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="StudentName"  HorizontalAlignment="Left" Height="23" Margin="130,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="StudentAddress" HorizontalAlignment="Left" Height="23" Margin="130,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="StudentAge" HorizontalAlignment="Left" Height="23" Margin="130,265,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding Name}"/>
 
     </Grid>
 </Window>

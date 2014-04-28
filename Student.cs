@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace LetsDoThis
 {
@@ -21,7 +23,7 @@ namespace LetsDoThis
 
         public string Address
         {
-            get{return _address} 
+            get { return _address; } 
             set { _address = value; }
         }
 
@@ -30,5 +32,7 @@ namespace LetsDoThis
             get { return _age; }
             set { _age = value; }
         }
+
+       
     }
 }

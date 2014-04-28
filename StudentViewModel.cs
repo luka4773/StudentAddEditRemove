@@ -2,16 +2,20 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using LetsDoThis.Annotations;
+
 
 namespace LetsDoThis
 {
     class StudentViewModel : INotifyPropertyChanged
     {
+        private Student s = new Student();
         private readonly string _currentStudentName = "CurrentStudent";
         private readonly string _listStudents = "Students";
 
@@ -45,8 +49,8 @@ namespace LetsDoThis
                 return students;
             }
         }
-
-
+       
+      
 
         #region InotifyPropertyChanged
 
