@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 using LetsDoThis.Annotations;
 
 
@@ -15,14 +16,14 @@ namespace LetsDoThis
 {
     class StudentViewModel : INotifyPropertyChanged
     {
-        private Student s = new Student();
+       
         private readonly string _currentStudentName = "CurrentStudent";
         private readonly string _listStudents = "Students";
 
 
         private Student _currentStudent;
         private List<Student> _Students;
-
+        private RelayCommand _removeStudentCommand;
 
         public Student CurrentStudent
         {
@@ -37,6 +38,11 @@ namespace LetsDoThis
             } 
         }
 
+
+        public RelayCommand RemoveStudent
+        {
+            get { return _removeStudentCommand; }
+        }
         public ObservableCollection<Student> Students
         {
             get
@@ -48,6 +54,34 @@ namespace LetsDoThis
                 }
                 return students;
             }
+        }
+
+
+
+        public StudentViewModel()
+        {
+            _Students = new List<Student>()
+            {
+                new Student(){Name = "asadd", Address = "asqedad", Age = 23},
+                new Student(){Name = "asd", Address = "adsgsdad", Age = 23},
+                new Student(){Name = "asdads", Address = "asxvdad", Age = 23},
+                new Student(){Name = "adwdasd", Address = "asdad", Age = 23},
+                new Student(){Name = "asadsd", Address = "asdafeqad", Age = 23},
+                new Student(){Name = "asadsd", Address = "asdafeqad", Age = 23}
+
+            };
+
+
+
+            _currentStudent = _Students[0];
+
+            _removeStudentCommand = new RelayCommand(RemoveStudentCommand){ IsEnabled = true };
+        }
+
+        private void RemoveStudentCommand()
+        {
+            _Students.Remove(_currentStudent);
+            OnPropertyChanged(_listStudents);
         }
        
       

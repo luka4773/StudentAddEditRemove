@@ -94,6 +94,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="RelayCommand.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="StudentTable.cs">
       <DependentUpon>Model1.tt</DependentUpon>
