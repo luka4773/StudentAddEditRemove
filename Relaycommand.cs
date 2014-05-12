@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace LetsDoThis
 {
-    class RelayCommand
+    class RelayCommand : ICommand
     {
             private Action _handler;
             public RelayCommand(Action handler)

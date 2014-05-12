@@ -8,11 +8,13 @@ using System.Windows;
 
 namespace LetsDoThis
 {
-    class Student
+    public class Student
     {
         private string _name;
         private string _address;
         private int _age;
+
+       
 
 
         public string Name

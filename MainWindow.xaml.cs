@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Objects;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -21,8 +22,11 @@ namespace LetsDoThis
     /// </summary>
     public partial class MainWindow : Window
     {
+      
         StudentViewModel studentViewModel = new StudentViewModel();
-        Student student = new Student();
+        
+
+     
         public MainWindow()
         {
             InitializeComponent();
@@ -30,9 +34,8 @@ namespace LetsDoThis
             
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
+       
+
+      
     }
 }
