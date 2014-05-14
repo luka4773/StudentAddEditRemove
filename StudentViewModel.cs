@@ -18,7 +18,9 @@ namespace LetsDoThis
 {
     class StudentViewModel : INotifyPropertyChanged
     {
-       
+        private string _name;
+        private string _address;
+        private int _age;
         private readonly string _currentStudentName = "CurrentStudent";
         private readonly string _listStudents = "Students";
 
@@ -30,9 +32,34 @@ namespace LetsDoThis
         private ICommand _editStudentCommand;
         private ICommand _addStudentCommand;
 
-        public string Name { get; set; }
-        public string Address { get; set; }
-        public int Age { get; set; }
+        public string Name
+        {
+            get { return _name; }
+            set
+            {
+                _name = value;
+                OnPropertyChanged("Name");
+            }
+        }
+
+        public string Address
+        {
+            get { return _address; }
+            set
+            {
+                _address = value;
+                OnPropertyChanged("Address");
+            }
+        }
+        public int Age
+        {
+          get { return _age; }
+            set
+            {
+                _age = value; 
+                OnPropertyChanged("Age");
+            } 
+        }
 
         public Student CurrentStudent
         {
@@ -81,6 +108,13 @@ namespace LetsDoThis
       //ctor
         public StudentViewModel()
         {
+            var s = new Student
+            {
+                Name = Name,
+                Age = Age,
+                Address = Address
+            };
+            
       
            Students = _access.GetStudents();
            MessageBox.Show(""+ Students.Count);
@@ -110,8 +144,7 @@ namespace LetsDoThis
 
         private void AddStudentCommand()
         {
-            _Students.Add(new Student());
-            OnPropertyChanged(_listStudents);
+            _access.AddStudent();
         }
        
       

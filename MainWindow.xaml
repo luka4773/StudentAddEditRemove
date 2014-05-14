@@ -25,6 +25,7 @@
         <Label Content="{Binding CurrentStudent.Address}" HorizontalAlignment="Left" Margin="214,63,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.528,-2.913"/>
         <Label Content="{Binding CurrentStudent.Age}" HorizontalAlignment="Left" Margin="214,35,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.528,-2.913"/>
         <DataGrid HorizontalAlignment="Left" Margin="337,19,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.85,-1.308" Height="167" Width="286"/>
+        <DataGrid HorizontalAlignment="Left" Margin="-240,259,0,0" VerticalAlignment="Top"/>
 
 
 
