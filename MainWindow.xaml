@@ -11,9 +11,9 @@
         <Label Content="Name" HorizontalAlignment="Left" Margin="270,201,0,0" VerticalAlignment="Top"/>
         <Label Content="Address" HorizontalAlignment="Left" Margin="270,229,0,0" VerticalAlignment="Top"/>
         <Label Content="Age" HorizontalAlignment="Left" Margin="270,265,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="StudentName" Text="{Binding CurrentStudent.Name}" HorizontalAlignment="Left" Height="23" Margin="130,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="StudentAddress" Text="{Binding CurrentStudent.Address}"  HorizontalAlignment="Left" Height="23" Margin="130,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="StudentAge" Text="{Binding CurrentStudent.Age}" HorizontalAlignment="Left" Height="23" Margin="130,265,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="StudentName" Text="{Binding Name}" HorizontalAlignment="Left" Height="23" Margin="130,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="StudentAddress" Text="{Binding Address}"  HorizontalAlignment="Left" Height="23" Margin="130,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="StudentAge" Text="{Binding Age}" HorizontalAlignment="Left" Height="23" Margin="130,265,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <ListBox x:Name="ListBox1" ItemsSource="{Binding Students}" SelectedItem="{Binding CurrentStudent}" HorizontalAlignment="Left" Height="148" Margin="10,0,0,0" VerticalAlignment="Top" Width="182">
             <ListBox.ItemTemplate>
                 <DataTemplate>

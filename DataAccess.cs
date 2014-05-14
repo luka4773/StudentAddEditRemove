@@ -35,11 +35,11 @@ namespace LetsDoThis
             {
                 Connection = _connection,
                 CommandType = CommandType.Text,
-                CommandText = "INSERT INTO StudentTable VALUES (@Name, @Age, @Address)"
+                CommandText = "INSERT INTO StudentTable VALUES (@Name, @Address, @Age)"
             };
-            command.Parameters.Add(new SqlParameter("Name", student.Name));
-            command.Parameters.Add(new SqlParameter("Age", student.Age));
+            command.Parameters.Add(new SqlParameter("Name", student.Name));           
             command.Parameters.Add(new SqlParameter("Address", student.Address));
+            command.Parameters.Add(new SqlParameter("Age", student.Age));
             command.ExecuteNonQuery();           
             MessageBox.Show("Student added.");
             Disconnect();

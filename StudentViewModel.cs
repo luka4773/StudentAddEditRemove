@@ -24,7 +24,7 @@ namespace LetsDoThis
         private readonly string _currentStudentName = "CurrentStudent";
         private readonly string _listStudents = "Students";
 
-        private ObservableCollection<Student> asdasdad = new ObservableCollection<Student>(); 
+        private ObservableCollection<Student> _getStudents = new ObservableCollection<Student>(); 
         private DataAccess _access = new DataAccess();
         private Student _currentStudent;
         private List<Student> _Students;
@@ -95,11 +95,11 @@ namespace LetsDoThis
             get
             {
              
-                return asdasdad;
+                return _getStudents;
             }
             set
             {
-                asdasdad = value;
+                _getStudents = value;
                 OnPropertyChanged("Students");
             }
         }
@@ -108,12 +108,7 @@ namespace LetsDoThis
       //ctor
         public StudentViewModel()
         {
-            var s = new Student
-            {
-                Name = Name,
-                Age = Age,
-                Address = Address
-            };
+           
             
       
            Students = _access.GetStudents();
@@ -144,7 +139,14 @@ namespace LetsDoThis
 
         private void AddStudentCommand()
         {
-            _access.AddStudent();
+            var s = new Student
+            {
+                Name = Name,
+                Age = Age,
+                Address = Address
+            };
+            _access.AddStudent(s);
+            
         }
        
       
