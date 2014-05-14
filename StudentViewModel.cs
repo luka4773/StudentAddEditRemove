@@ -22,12 +22,17 @@ namespace LetsDoThis
         private readonly string _currentStudentName = "CurrentStudent";
         private readonly string _listStudents = "Students";
 
-        //private DataAccess _access;
+        private ObservableCollection<Student> asdasdad = new ObservableCollection<Student>(); 
+        private DataAccess _access = new DataAccess();
         private Student _currentStudent;
         private List<Student> _Students;
         private ICommand _removeStudentCommand;
         private ICommand _editStudentCommand;
         private ICommand _addStudentCommand;
+
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public int Age { get; set; }
 
         public Student CurrentStudent
         {
@@ -42,11 +47,7 @@ namespace LetsDoThis
             } 
         }
 
-       /* public DataAccess connect
-        {
-            get { return _access; }
-        }
-        */
+        
 
         public ICommand AddStudent
         {
@@ -66,39 +67,30 @@ namespace LetsDoThis
         {
             get
             {
-                ObservableCollection<Student> students = new ObservableCollection<Student>();
-                foreach (var Student in _Students)
+               // ObservableCollection<Student> students = new ObservableCollection<Student>();
+               /* foreach (var Student in _Students)
                 {
                     students.Add(Student);
                 }
-                return students;
+                */
+                return asdasdad;
             }
-        }
-
-
-       /* public IEnumerable<string> GetTagList()
-        {
-            using (var connection = new SqlConnection(@"server=(LocalDB)\v11.0;AttachDbFilename=""E:\ConstructionSemester2\LetsDoThis\LetsDoThis\StudentsDB.mdf"""))
-            using (var cmd = connection.CreateCommand())
+            set
             {
-                connection.Open();
-                cmd.CommandText = "select Name from StudentTable"; // update select command accordingly
-                using (var reader = cmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        yield return reader.GetString(reader.GetOrdinal("Name"));
-                    }
-                }
+                asdasdad = value;
+                OnPropertyChanged("Students");
             }
         }
-        */
+
+
+      
         public StudentViewModel()
         {
-          //  _access.Connect();
+           
+            
             
            
-            _Students = new List<Student>()
+        /*    _Students = new List<Student>
             {
                 
                 
@@ -112,14 +104,19 @@ namespace LetsDoThis
                 
             };
         
+         */
+           Students = _access.GetStudents();
+           MessageBox.Show(""+ Students.Count);
             
 
-            _currentStudent = _Students[0];
+           // _currentStudent = _Students[0];
 
-            _removeStudentCommand = new RelayCommand(RemoveStudentCommand){ IsEnabled = true };
-            _editStudentCommand = new RelayCommand(EditStudentCommand){IsEnabled = true};
-            _addStudentCommand = new RelayCommand(AddStudentCommand){IsEnabled = true};
+            _removeStudentCommand = new RelayCommand(RemoveStudentCommand) { IsEnabled = true };
+            _editStudentCommand = new RelayCommand(EditStudentCommand) { IsEnabled = true };
+            _addStudentCommand = new RelayCommand(AddStudentCommand) { IsEnabled = true };
+
         }
+        
 
         private void RemoveStudentCommand()
         {

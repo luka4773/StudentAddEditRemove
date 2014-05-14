@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="660.1">
     <Grid>
         <Button x:Name="AddButton" Command="{Binding AddStudent}" Content="add"  HorizontalAlignment="Left" Margin="10,192,0,0" VerticalAlignment="Top" Width="75" />
         <Button Content="edit" Command="{Binding EditStudent}" HorizontalAlignment="Left" Margin="10,243,0,0" VerticalAlignment="Top" Width="75" />
@@ -13,7 +13,7 @@
         <Label Content="Age" HorizontalAlignment="Left" Margin="270,265,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="StudentName" Text="{Binding CurrentStudent.Name}" HorizontalAlignment="Left" Height="23" Margin="130,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="StudentAddress" Text="{Binding CurrentStudent.Address}"  HorizontalAlignment="Left" Height="23" Margin="130,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="StudentAge" Text="{Binding CurrentStudent.Age}" HorizontalAlignment="Left" Height="23" Margin="130,265,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>        
+        <TextBox x:Name="StudentAge" Text="{Binding CurrentStudent.Age}" HorizontalAlignment="Left" Height="23" Margin="130,265,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <ListBox x:Name="ListBox1" ItemsSource="{Binding Students}" SelectedItem="{Binding CurrentStudent}" HorizontalAlignment="Left" Height="148" Margin="10,0,0,0" VerticalAlignment="Top" Width="182">
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -21,8 +21,10 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <Label Content="{Binding CurrentStudent.Name}" HorizontalAlignment="Left" Margin="214,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.528,-2.913"/>
         <Label Content="{Binding CurrentStudent.Address}" HorizontalAlignment="Left" Margin="214,63,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.528,-2.913"/>
         <Label Content="{Binding CurrentStudent.Age}" HorizontalAlignment="Left" Margin="214,35,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.528,-2.913"/>
+        <DataGrid HorizontalAlignment="Left" Margin="337,19,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.85,-1.308" Height="167" Width="286"/>
 
 
 
