@@ -61,7 +61,7 @@ namespace LetsDoThis
             Disconnect();
         }
 
-        public void RemoveStudent()
+        public void RemoveStudent(Student student)
         {
             Connect();
             var command = new SqlCommand()
@@ -70,7 +70,7 @@ namespace LetsDoThis
                 CommandType = CommandType.Text,
                 CommandText = "DELETE FROM StudentTable WHERE Name = @Name"
             };
-            command.Parameters.Add(new SqlParameter("Name", Student.Name));
+            command.Parameters.Add(new SqlParameter("Name", student.Name));
             command.ExecuteNonQuery();
             Disconnect();
         }

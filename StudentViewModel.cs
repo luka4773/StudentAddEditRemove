@@ -67,12 +67,7 @@ namespace LetsDoThis
         {
             get
             {
-               // ObservableCollection<Student> students = new ObservableCollection<Student>();
-               /* foreach (var Student in _Students)
-                {
-                    students.Add(Student);
-                }
-                */
+             
                 return asdasdad;
             }
             set
@@ -83,33 +78,15 @@ namespace LetsDoThis
         }
 
 
-      
+      //ctor
         public StudentViewModel()
         {
-           
-            
-            
-           
-        /*    _Students = new List<Student>
-            {
-                
-                
-                new Student(){Name = "A", Address = "G", Age = 23},
-                new Student(){Name = "B", Address = "H", Age = 21},
-                new Student(){Name = "C", Address = "I", Age = 24},
-                new Student(){Name = "D", Address = "J", Age = 25},
-                new Student(){Name = "E", Address = "K", Age = 29},
-                new Student(){Name = "F", Address = "L", Age = 27}
-                
-                
-            };
-        
-         */
+      
            Students = _access.GetStudents();
            MessageBox.Show(""+ Students.Count);
             
 
-           // _currentStudent = _Students[0];
+            _currentStudent = Students[0];
 
             _removeStudentCommand = new RelayCommand(RemoveStudentCommand) { IsEnabled = true };
             _editStudentCommand = new RelayCommand(EditStudentCommand) { IsEnabled = true };
@@ -117,7 +94,7 @@ namespace LetsDoThis
 
         }
         
-
+        //Icommands for add/remove/edit - not working 1oo% yet
         private void RemoveStudentCommand()
         {
             _Students.Remove(_currentStudent);
